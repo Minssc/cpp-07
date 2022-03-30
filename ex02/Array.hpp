@@ -1,25 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   whatever.hpp                                       :+:      :+:    :+:   */
+/*   Array.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: minsunki <minsunki@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/30 16:07:01 by minsunki          #+#    #+#             */
-/*   Updated: 2022/03/30 22:45:12 by minsunki         ###   ########seoul.kr  */
+/*   Created: 2022/03/30 16:39:23 by minsunki          #+#    #+#             */
+/*   Updated: 2022/03/30 22:17:29 by minsunki         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef __WHATEVER_HPP__
-#define __WHATEVER_HPP__
+#ifndef __ARRAY_HPP__
+#define __ARRAY_HPP__
 
-template <class T>
-void	swap(T &a, T &b);
+template <typename T>
+class Array
+{
+	private:
+		T	*_array;
+		int	_size;
 
-template <class T>
-T	&min(T &a, T &b);
+	public:
+		Array();
+		Array(const unsigned int &n);
+		Array(const Array &a);
+		~Array();
 
-template <class T>
-T	&max(T &a, T &b);
+		const Array	&operator =(const Array &a);
+		T	&operator [](int idx) const;
+
+		int	size() const;
+};
+
+#include "Array.tpp"
 
 #endif

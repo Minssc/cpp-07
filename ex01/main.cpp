@@ -6,11 +6,24 @@
 /*   By: minsunki <minsunki@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/30 16:14:16 by minsunki          #+#    #+#             */
-/*   Updated: 2022/03/30 16:28:45 by minsunki         ###   ########seoul.kr  */
+/*   Updated: 2022/03/30 22:46:30 by minsunki         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "iter.hpp"
+
+template <class T>
+void	print(T &a)
+{
+	std::cout << a << std::endl;
+}
+
+template <class T>
+void	iter(T *begin, const unsigned int &len, void (*f)(T &a))
+{
+	for (unsigned int i = 0; i < len; ++i)
+		f(begin[i]);
+}
 
 int	main()
 {
