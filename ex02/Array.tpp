@@ -6,7 +6,7 @@
 /*   By: minsunki <minsunki@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/30 16:48:01 by minsunki          #+#    #+#             */
-/*   Updated: 2022/03/31 13:04:22 by minsunki         ###   ########seoul.kr  */
+/*   Updated: 2022/03/31 19:36:45 by minsunki         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,9 @@ template <typename T>
 const Array<T>	&Array<T>::operator =(const Array<T> &a)
 {
 	_size = a.size(); 
-	T	*tp = new T[a.size()];
+	T	*tp = new T[_size];
 	
-	for (int i = 0; i < _size; ++i)
+	for (unsigned int i = 0; i < _size; ++i)
 		tp[i] = a[i];
 	delete[] _array;
 	_array = tp;
@@ -48,15 +48,15 @@ const Array<T>	&Array<T>::operator =(const Array<T> &a)
 }
 
 template <typename T>
-T	&Array<T>::operator [](int idx) const
+T	&Array<T>::operator [](unsigned int idx) const
 {
-	if (idx < 0 || _size <= idx)
+	if (_size <= idx)
 		throw std::exception();
 	return (_array[idx]);
 }
 
 template <typename T>
-int	Array<T>::size() const
+unsigned int	Array<T>::size() const
 {
 	return (_size);
 }
