@@ -6,7 +6,7 @@
 /*   By: minsunki <minsunki@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/30 16:14:16 by minsunki          #+#    #+#             */
-/*   Updated: 2022/03/30 22:46:30 by minsunki         ###   ########seoul.kr  */
+/*   Updated: 2022/03/31 12:52:48 by minsunki         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	main()
 	int arr[10];
 	for (int i = 0; i < 10; ++i)
 		arr[i] = i;
-	iter(arr, 10, ::print);
+	iter(arr, 10, print);
 	std::cout << std::endl;
 
 	unsigned int arr2[16];
@@ -39,6 +39,6 @@ int	main()
 	for (int i =0; i < 16 - 2; ++i)
 		arr2[i + 2] = arr2[i + 1] + arr2[i];
 
-	iter(arr2, 16, ::print);
+	iter(arr2, 16, print);
 	return (0);
 }

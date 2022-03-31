@@ -6,7 +6,7 @@
 /*   By: minsunki <minsunki@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/30 21:00:33 by minsunki          #+#    #+#             */
-/*   Updated: 2022/03/30 22:42:55 by minsunki         ###   ########seoul.kr  */
+/*   Updated: 2022/03/31 13:03:22 by minsunki         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,5 +74,22 @@ int main(int, char**)
 		std::cout << e.what() << std::endl;
 	}
 
+	Array<double> dtest(10);
+	Array<double> mtest(dtest);
+	
+	for (int i = 0; i < 10; ++i)
+		dtest[i] = static_cast<double>(rand()) / 10;
+	{
+		Array<double> ctest = dtest;
+		for (int i = 0; i < 10; ++i)
+			ctest[i] = 0.0;
+	}
+
+	for (int i = 0; i < 10; ++i)
+		if (mtest[i] != mtest[i])
+			std::cout << "dtest content was modified!" << std::endl;
+
+	Array<std::string>	stest(10);
+	
     return 0;
 }
