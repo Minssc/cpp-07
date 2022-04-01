@@ -6,13 +6,14 @@
 /*   By: minsunki <minsunki@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/30 21:00:33 by minsunki          #+#    #+#             */
-/*   Updated: 2022/03/31 13:03:22 by minsunki         ###   ########seoul.kr  */
+/*   Updated: 2022/04/01 13:06:30 by minsunki         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <math.h>
 #include <iostream>
 #include <Array.hpp>
+#include <vector>
 
 #define MAX_VAL 750
 int main(int, char**)
@@ -71,6 +72,7 @@ int main(int, char**)
 	}
 	catch (const std::exception &e)
 	{
+		std::cout << "tried to index an empty array" << std::endl;
 		std::cout << e.what() << std::endl;
 	}
 

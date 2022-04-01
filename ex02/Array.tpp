@@ -6,7 +6,7 @@
 /*   By: minsunki <minsunki@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/30 16:48:01 by minsunki          #+#    #+#             */
-/*   Updated: 2022/03/31 19:36:45 by minsunki         ###   ########seoul.kr  */
+/*   Updated: 2022/04/01 13:04:22 by minsunki         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,10 @@
 #define __ARRAY_TPP__
 
 template <typename T>
-Array<T>::Array(): _array(0), _size(0) {}
+Array<T>::Array(): _array(0), _size(0)
+{
+	_array = new T[0];
+}
 
 template <typename T>
 Array<T>::Array(const unsigned int &n): _array(0), _size(n)
