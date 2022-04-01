@@ -6,24 +6,11 @@
 /*   By: minsunki <minsunki@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/30 16:14:16 by minsunki          #+#    #+#             */
-/*   Updated: 2022/03/31 12:52:48 by minsunki         ###   ########seoul.kr  */
+/*   Updated: 2022/04/01 13:01:25 by minsunki         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "iter.hpp"
-
-template <class T>
-void	print(T &a)
-{
-	std::cout << a << std::endl;
-}
-
-template <class T>
-void	iter(T *begin, const unsigned int &len, void (*f)(T &a))
-{
-	for (unsigned int i = 0; i < len; ++i)
-		f(begin[i]);
-}
 
 int	main()
 {
@@ -40,5 +27,15 @@ int	main()
 		arr2[i + 2] = arr2[i + 1] + arr2[i];
 
 	iter(arr2, 16, print);
+	std::cout << std::endl;
+
+	std::string	arr3[5];
+	arr3[0] = "hello";
+	arr3[1] = "world";
+	arr3[2] = "hello";
+	arr3[3] = "42seoul";
+	arr3[4] = ":D";
+
+	iter(arr3, 5, print);
 	return (0);
 }
