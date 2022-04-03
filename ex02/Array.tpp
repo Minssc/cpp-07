@@ -6,7 +6,7 @@
 /*   By: minsunki <minsunki@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/30 16:48:01 by minsunki          #+#    #+#             */
-/*   Updated: 2022/04/01 13:04:22 by minsunki         ###   ########seoul.kr  */
+/*   Updated: 2022/04/03 16:53:58 by minsunki         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,15 @@ const Array<T>	&Array<T>::operator =(const Array<T> &a)
 }
 
 template <typename T>
-T	&Array<T>::operator [](unsigned int idx) const
+T	&Array<T>::operator [](unsigned int idx)
+{
+	if (_size <= idx)
+		throw std::exception();
+	return (_array[idx]);
+}
+
+template <typename T>
+const T	&Array<T>::operator [](unsigned int idx) const
 {
 	if (_size <= idx)
 		throw std::exception();

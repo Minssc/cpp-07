@@ -6,7 +6,7 @@
 /*   By: minsunki <minsunki@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/30 16:39:23 by minsunki          #+#    #+#             */
-/*   Updated: 2022/03/31 19:36:31 by minsunki         ###   ########seoul.kr  */
+/*   Updated: 2022/04/03 16:53:20 by minsunki         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,8 @@ class Array
 		~Array();
 
 		const Array	&operator =(const Array &a);
-		T	&operator [](unsigned int idx) const;
+		T	&operator [](unsigned int idx);
+		const T	&operator [](unsigned int idx) const;
 
 		unsigned int	size() const;
 };
